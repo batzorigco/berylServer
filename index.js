@@ -50,7 +50,7 @@ userItem.save((err,result)=> {
  console.log("+++TodoItem saved successfully "+userItem.lastName)
 })
 */
-
+/*
 var userItem = new Job({
   jobId: 1,
   empId: 1,
@@ -72,7 +72,7 @@ userItem.save((err,result)=> {
 })
 
 app.listen(3000,()=> {console.log("+++Express Server is Running!!!")})
-
+*/
 app.get('/req',(req,res)=>{
   Article.find(function (err, article) {
     if (err) return handleError(err);
@@ -93,7 +93,7 @@ app.get('/articles',(req,res)=>{
   Article.findOne({ 'articleId': req.query.id }, function (err, article) {
     if (err) return handleError(err);
     console.log('length: '+ article);
-    console.log('req: ' + req);
+    console.log('req: ' + JSON.stringify(req);
     res.send(article);
   });
 })
