@@ -81,6 +81,14 @@ app.get('/req',(req,res)=>{
   });
 })
 
+app.get('/job',(req,res)=>{
+  Job.find(function (err, job) {
+    if (err) return handleError(err);
+    console.log('length: '+ job.length);
+    res.send(job);
+  });
+})
+
 app.get('/articles',(req,res)=>{
   Article.findOne({ 'articleId': req.query.id }, function (err, article) {
     if (err) return handleError(err);
