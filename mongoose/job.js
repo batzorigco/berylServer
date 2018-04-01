@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var empSchema = new Schema({
+var jobSchema = new Schema({
     jobId: Number,
     empId: Number,
     name: String,
@@ -15,8 +15,8 @@ var empSchema = new Schema({
     deadline: Date,
     phone: Number,
     rate: Number
-}, {collection:"Employers"});
+}, {collection:"Jobs"});
 // we need to create a model using it
-var Employer = mongoose.model('Employer', empSchema);
+var Job = mongoose.model('Job', jobSchema);
 
-module.exports = Employer;
+module.exports = Job;

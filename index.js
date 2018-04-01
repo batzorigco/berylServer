@@ -3,6 +3,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var Article = require('./mongoose/article')
 var User = require('./mongoose/user')
+var Job = require('./mongoose/job')
 var cors = require('cors')
 var app = express()
 app.use(cors())
@@ -49,6 +50,27 @@ userItem.save((err,result)=> {
  console.log("+++TodoItem saved successfully "+userItem.lastName)
 })
 */
+
+var userItem = new Job({
+  jobId: 1,
+  empId: 1,
+  name: "Visual Designer",
+  desc: "Contract · Remote OK · Berlin · Frontend Developer",
+  postDate: new Date(2018, 04, 01, 12, 00, 00, 00),
+  state: "Hiring",
+  cond: "Full-Time",
+  skill: "ReactJS · React Native · HTML · CSS · Javascript",
+  deadline: new Date(2018, 04, 12, 12, 00, 00, 00),
+  phone: "95675679",
+  rate: 50
+})
+
+
+userItem.save((err,result)=> {
+ if (err) {console.log("---TodoItem save failed " + err)}
+ console.log("+++TodoItem saved successfully "+ userItem.name)
+})
+
 app.listen(3000,()=> {console.log("+++Express Server is Running!!!")})
 
 app.get('/req',(req,res)=>{
