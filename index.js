@@ -93,7 +93,7 @@ app.get('/articles',(req,res)=>{
   Article.findOne({ 'articleId': req.query.id }, function (err, article) {
     if (err) return handleError(err);
     console.log('length: '+ article);
-    console.log('req: ' + JSON.stringify(req);
+    console.log('req: ' + JSON.stringify(req));
     res.send(article);
   });
 })
