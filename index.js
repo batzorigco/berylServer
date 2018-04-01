@@ -70,9 +70,9 @@ userItem.save((err,result)=> {
  if (err) {console.log("---TodoItem save failed " + err)}
  console.log("+++TodoItem saved successfully "+ userItem.name)
 })
-
-app.listen(3000,()=> {console.log("+++Express Server is Running!!!")})
 */
+app.listen(3000,()=> {console.log("+++Express Server is Running!!!")})
+
 app.get('/req',(req,res)=>{
   Article.find(function (err, article) {
     if (err) return handleError(err);
