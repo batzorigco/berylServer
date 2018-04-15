@@ -90,7 +90,7 @@ app.get('/job',(req,res)=>{
 })
 
 app.get('/articles',(req,res)=>{
-  Article.findOne({ 'articleId': req.query.articleId }, function (err, article) {
+  Article.findOne({ 'articleId': 1 }, function (err, article) {
     if (err) return handleError(err);
     console.log('length: '+ article);
     console.dir(req);
