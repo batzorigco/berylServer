@@ -8,8 +8,9 @@ var usr = require('./mongoose/usr')
 var cors = require('cors')
 var session = require('express-session')
 var bodyParser = require('body-parser');
-app.use(bodyParser.json());
 var app = express()
+
+app.use(bodyParser.json());
 app.use(cors())
 //use sessions for tracking logins
 app.use(session({
