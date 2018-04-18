@@ -99,14 +99,14 @@ app.get('/job',(req,res)=>{
     res.send(job);
   });
 })
-app.get('/jobdetail',(req,res)=>{
-  Job.findOne({ 'empId': 2 } ), function (err, job) {
-    if (err) return handleError(err);
-    console.log('length: '+ job);
-    res.send(job);
-  }
-})
 
+app.get('/jobs',(req,res)=>{
+  Job.findOne({'jobId':1}, function (err, job) {
+    if (err) return handleError(err);
+    console.log('length: '+ job.length);
+    res.send(job);
+  });
+})
 app.get('/articles',(req,res)=>{
   Article.findOne({ 'articleId': 1 }, function (err, article) {
     if (err) return handleError(err);
