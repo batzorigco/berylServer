@@ -99,12 +99,11 @@ app.get('/job',(req,res)=>{
     res.send(job);
   });
 })
-app.get('/jobDetail',(req, res)=>{
-  Job.findOne({'jobId': 1} ), function (err, job) {
+app.get('/jobDetail',(req,res)=>{
+  Job.findOne({ 'jobId': 1 } ), function (err, job) {
     if (err) return handleError(err);
     console.log('length: '+ job);
     res.send(job);
-
   }
 })
 
