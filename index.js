@@ -6,6 +6,7 @@ var User = require('./mongoose/user')
 var Job = require('./mongoose/job')
 var usr = require('./mongoose/usr')
 var cors = require('cors')
+var session = require('express-session')
 var app = express()
 app.use(cors())
 //use sessions for tracking logins
