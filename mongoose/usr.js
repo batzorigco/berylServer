@@ -47,13 +47,16 @@ usrSchema.statics.authenticate = function (email, password, callback) {
 //hashing a password before saving it to the database
 usrSchema.pre('save', function (next) {
   var user = this;
-  bcrypt.hash(usr.password, 10, function (err, hash){
-    if (err) {
-      return next(err);
-    }
-    usr.password = hash;
-    next();
-  })
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(usr.password, salt, function (err, hash){
+      if (err) {
+        return next(err);
+      }
+      usr.password = hash;
+      next();
+    })
+});
+
 });
 var usr = mongoose.model('Users', usrSchema);
 module.exports = usr;
