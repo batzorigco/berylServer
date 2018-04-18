@@ -100,7 +100,7 @@ app.get('/job',(req,res)=>{
   });
 })
 app.get('/jobDetail',(req,res)=>{
-  Job.findOne({ 'jobId': 1 } ), function (err, job) {
+  Job.findOne({ 'empId': 2 } ), function (err, job) {
     if (err) return handleError(err);
     console.log('length: '+ job);
     res.send(job);
